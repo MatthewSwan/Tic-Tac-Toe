@@ -33,6 +33,21 @@ class AuthenticationTest < ActionDispatch::IntegrationTest
   end
 
   def test_users_are_remembered_when_returning_to_the_site
-    skip
+    name = 'Boo'
+    uid  = '1234'
+    OmniAuth.config.mock_auth[:twitter] = OmniAuth::AuthHash.new({
+      'provider'    => 'twitter',
+      'uid'         => uid,
+      'info'        => {'name' => name},
+      'credentials' => {'token' => 'test-token', 'secret' => 'test-secret'}
+    })
+
+    User.create(uid: uid, name: name)
+    page.visit root_path
+
+    page.click_on 'Log In'
+
+    assert_equal 1, User.count
+
   end
 end
