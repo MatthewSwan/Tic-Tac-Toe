@@ -1,6 +1,32 @@
-<% if logged_in? %>
-  <%= link_to 'Log Out', logout_path %>
-<% else %>
-  <%= link_to 'Log In', login_path %>
-<% end %>
 
+<body>
+<% if logged_in? %>
+  <div class='login'><%= button_to 'Log Out', logout_path %></div>
+<% else %>
+  <div class='login'><%= button_to 'Log In', login_path %>
+<% end %>
+<br>
+
+<div id='playerone' class='red'>Player 1</div>
+
+<div id='playertwo' class='blue'>Player 2</div>
+
+
+<!--Grid
+  A1 A2 A3
+  B1 B2 B3
+  C1 C2 C3
+-->
+
+<div class='container'>
+  <%= link_to "", '#', class: 'cell tl' %>
+  <%= link_to "", marker_path, class: 'cell 0 1', :method => :post %>
+  <%= link_to "", marker_path, class: 'cell 0 2', :method => :post %>
+  <%= link_to "", marker_path, class: 'cell 1 0', :method => :post %>
+  <%= link_to "", marker_path, class: 'cell 1 1', :method => :post %>
+  <%= link_to "", marker_path, class: 'cell 1 2', :method => :post %>
+  <%= link_to "", marker_path, class: 'cell 2 0', :method => :post %>
+  <%= link_to "", marker_path, class: 'cell 2 1', :method => :post %>
+  <%= link_to "", marker_path, class: 'cell 2 2', :method => :post %>
+</div>
+</body>
