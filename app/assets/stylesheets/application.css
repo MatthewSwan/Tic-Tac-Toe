@@ -21,10 +21,13 @@ body {
   width: 100%;
 }
 
+.cell.tl:active {
+  background-color: #F45B69;
+}
+
 .red {
   background-color: #F45B69;
   color: #17212B;
-  border-radius: 50%;
 }
 
 .blue {
@@ -32,14 +35,16 @@ body {
   color: #17212B;
 }
 
-.test {
-  float: right;
-  position: relative;
-  left: -50%;
+.login {
+  /* height: 300px; */
+  margin:0 auto;
+  display: block;
+  width: 50px;
 }
 
 #playerone {
   display: inline-block;
+  position: relative;
   left: 5%;
   float: left;
   color: #E3EAF2;
@@ -52,6 +57,7 @@ body {
 
 #playertwo {
   display: inline-block;
+  position: relative;
   right: 5%;
   float: right;
   color: #E3EAF2;
@@ -78,13 +84,9 @@ body {
 
 .container {
   position: relative;
-  left: 3%;
+  left: 4.5%;
   top: 20%;
   width: 65%;
-  height: 60vw;
+  height: 65vw;
   margin: 0 auto;
 }
-
-
-
-

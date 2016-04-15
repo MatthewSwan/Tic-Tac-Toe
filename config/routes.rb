@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
@@ -8,6 +7,7 @@ Rails.application.routes.draw do
   get 'auth/twitter', as: "login"
   get 'auth/twitter/callback', to: "sessions#create"
   match '/sessions', to: "sessions#destroy", as: "logout", via: [:get, :delete]
+  post 'marker', to: 'game#marker'
 
 
   # Example of regular route:
