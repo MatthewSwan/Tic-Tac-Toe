@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'auth/twitter', as: "login"
+  get "board", to: "game#board"
+  post "marker", to: "game#marker"
+
   get 'auth/twitter/callback', to: "sessions#create"
+  get "create", to: "sessions#create"
   match '/sessions', to: "sessions#destroy", as: "logout", via: [:get, :delete]
-  post 'marker', to: 'game#marker'
 
 
   # Example of regular route:
