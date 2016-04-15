@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   get 'auth/twitter', as: "login"
+  get "board", to: "game#board"
+  post "marker", to: "game#marker"
+
   get 'auth/twitter/callback', to: "sessions#create"
+  get "create", to: "sessions#create"
   match '/sessions', to: "sessions#destroy", as: "logout", via: [:get, :delete]
-
-
-  # Example of regular route:
+# Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
